@@ -21,6 +21,8 @@
 	echo '<p>Resultado da Soma: '.$resultado.'</p>';
 	
 
+	//Switch Case
+
 	$diadasemana = date("w");
 	#echo $diadasemana;
 
@@ -68,11 +70,54 @@ echo "<p>Curso com Github online</p>";
 	//a última linha não precisa de ;
 	//mas se for adicionada outra, ira ocorrer erro.
 $nome = "Alessandro Jonas";
+$sobrenome = "Lourenco";
+
+$nomeCompleto = $nome . " " . $sobrenome;
+
+echo '<p>'.$nome.'</p>';
+
+echo '<p>'.$nomeCompleto.'</p>';
+
 
 var_dump($nome);
 
+// exit; esse comando interrompe o processo
+
+//Limpar variavel 
+unset($nome);
+
+//verifical se existe conteudo na variavel 
+if(isset($nome)){
+
+	echo $nome;
+}else{
+
+	echo '<p>Variavel esta vazia</p>';
+}
 
 
+//variavel array
+$fruta = array("abacaxi", "laranja", "manga", "abacate");
+
+echo $fruta[0].'<br>';
+echo $fruta[1].'<br>';
+echo $fruta[3].'<br><br>';
+
+//variavel do tipo objeto
+$dataNascimento = new DateTime();
+
+
+var_dump($dataNascimento);
+
+echo '<p></p>';
+
+$arquivo  = fopen("index.php", "r");
+
+var_dump($arquivo);
+
+
+//variavel do tipo NULL
+$nulo = null;
 
 
 
