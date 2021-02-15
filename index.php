@@ -65,9 +65,16 @@ echo "<p>testeeee - Ale</p>";
 echo "<p>Curso com Github online</p>";
 
 
-
 	//a última linha não precisa de ;
 	//mas se for adicionada outra, ira ocorrer erro.
+$nome = "Alessandro Jonas";
+
+var_dump($nome);
+
+
+
+
+
 
 
 ?>
