@@ -336,7 +336,61 @@ if (isset($_POST["numero1"])){
 	echo "<p></p>";
 
 	//String
+	$nome = "Alessandro";
+	echo "$nome"; //exibi Alessandro
+	echo ' $nome'; //exibi $nome	
+	//aspas dupla é melhor
 	
+	echo "<p></p>";
+	echo strtoupper($nome); //letra maiuscula
+	echo "<br>";
+	echo strtolower($nome); //letra minuscula
+	echo "<br>";
+	$nome = "alessandro jonas";
+	echo ucwords($nome); //Primeira de cada palavra maiuscula
+	echo "<br>";
+	echo ucfirst($nome); //Some a primeira letra da primeira palavra maiuscula
+	echo "<br>";
+
+	echo "<p></p>";
+
+	$nomenovo = str_replace("a", "@", $nome); //troca o a pelo @ na variavel $nomenovo
+	echo $nomenovo;
+
+	echo "<p></p>";
+
+	$frase = "Ola Enfermeira, ola mundo";
+	$find = strrpos($frase, "Enfermeira"); //pega 
+	var_dump($find);
+
+	$texto = substr($frase, $find); //mostra a frase a partir da posição 4 ($find)
+	//resultado sera Enfermeira, ola Mundo
+	echo $texto;
+
+	echo "<p></p>";
+
+	$email  = "jonas @ alessandrojonas.com.br";
+	$arroba = strrpos($email, "@");
+	var_dump($arroba);
+	$dominio = substr($email, $arroba + 1);// substr("texto", "a partir daqui")
+	echo '<br>'.$dominio; //resultado alessandrojonas.com.br
+	//ou
+	echo "<p></p>";	
+	$dominio2 = substr($email, $arroba + strlen($arroba));// substr("texto", "a partir daqui")
+	echo $dominio2;
+	echo "<p></p>";	
+	$quantidadecaracteres = strlen($email); //quantidade de caracteres
+	echo $quantidadecaracteres;
+	echo "<p></p>";	
+
+	$dominio3 = substr($email, $arroba + strlen($arroba), 11);// substr("texto", "daqui", "até aqui")
+	echo $dominio3;
+
+	echo "<p></p>";	
+
+
+	
+
 
 ?>
 
