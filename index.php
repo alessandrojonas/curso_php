@@ -276,5 +276,67 @@ if (isset($_POST["numero1"])){
 	echo "<br>";
 	var_dump($a !== $b);
 	echo "<br>";
+
+	//validador espace ship
+
+	$a = 50;
+	$b = 35;
+
+	var_dump($a <=> $b); //1
+	echo "<br>";
+
+	$a = 35;
+	$b = 35;
+
+	var_dump($a <=> $b); //0
+	echo "<br>";
+
+	$a = 10;
+	$b = 35;
+
+	var_dump($a <=> $b); //-1
+	echo "<br>";
+
+	echo "<p></p>";
+	//comparar variaveis nula NULL
+	$a = NULL;
+	$b = NULL;
+	$c = 15;
+
+	echo $a ?? $b ?? $c; //ira imprimir 15
+
+	echo "<p></p>";
+	//exemplo 2
+
+	$a = NULL;
+	$b = 17;
+	$c = 10;
+
+	echo $a ?? $b ?? $c; //ira imprimir o 10
+
+	echo "<p></p>";
+
+	//operador de incremento;
+	$a = 10;
+	echo $a."<br>";
+	
+	$a++;
+	echo $a."<br>";
+
+	//++a pre incremento
+	//--a pre decremento
+	//a++ pos incremento
+	//a-- pos decremento
+
+	echo "<p></p>";
+
+	$resultado = 10+10 && 2*10;
+	var_dump($resultado);
+
+	echo "<p></p>";
+
+	//String
+	
+
 ?>
 
