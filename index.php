@@ -69,7 +69,9 @@ echo "<p>Curso com Github online</p>";
 
 	//a última linha não precisa de ;
 	//mas se for adicionada outra, ira ocorrer erro.
+
 $nome = "Alessandro Jonas";
+
 $sobrenome = "Lourenco";
 
 $nomeCompleto = $nome . " " . $sobrenome;
@@ -120,7 +122,159 @@ var_dump($arquivo);
 $nulo = null;
 
 
+//variavel GET
+if(isset($_GET["ano"])){
+	$ano = $_GET["ano"]; 
+	echo '<p>Ano: '.$ano.'</p>';
+	var_dump($ano); 
+}
+
+if(isset($_GET["mes"]))
+echo '<p>Mes: '.$_GET["mes"].'</p>';
+
+?>
+
+<p><a href="?ano=2021&mes=2">clique aqui</a></p>
 
 
+<?php
+
+
+//ip da maquina //local pagina
+$ip  = $_SERVER["REMOTE_ADDR"];
+$local  = $_SERVER["SCRIPT_NAME"];
+
+echo $local. ' '. $ip;
+
+
+
+
+
+//varivel global
+$var1 = "Alessandro Jonas";
+
+function exibirNome(){
+	
+	global $var1;
+	echo '<p>Nome na Funcao: '. $var1.'</p>';
+}
+
+function exibirNome2(){
+
+	if(isset($var))	
+	echo $var1;
+	else
+	echo '<p>Nao existe a variavel pois nao foi definida global</p>';	
+}
+
+exibirNome();
+
+exibirNome2();
+
+
+function usarVariavelGlobal(){
+
+	global $var1;
+	$var1 = "Jonas";
+}
+
+usarVariavelGlobal();
+
+echo '<p>'.$var1.'</p>';
+
+
+
+//Operadores de Atribuição
+
+$var2 = "Hello";
+$var2 .= "World";
+echo '<p>'.$var2.'</p>';
+
+$valorTotal = 100;
+$valorTotal += 25;
+echo '<p>'.$valorTotal.'</p>';
+
+$valorTotal -= 75;
+echo '<p>'.$valorTotal.'</p>';
+
+$valorTotal *= 2;
+echo '<p>'.$valorTotal.'</p>';
+
+
+$a = 10;
+$b = 2;
+
+echo $a + $b;
+echo "<br>";
+
+echo $a - $b;
+echo "<br>";
+
+
+echo $a * $b;
+echo "<br>";
+
+echo $a / $b;
+echo "<br>";
+
+echo $a % $b;
+echo "<br>";
+
+
+echo $a ** $b;
+echo "<br>";
+
+echo '<p></p>';
+
+
+
+
+if (isset($_POST["numero1"])){
+
+	$parouimpar = $_POST["numero1"];
+
+	$result1 = $parouimpar % 2;
+
+	if($result1 == 0){
+		echo "O Numero é <strong>Par</strong>";
+	}
+	else{
+		echo "O Numero é <strong>Impar</strong>";
+	}
+
+
+}
+
+
+
+?>
+
+<form name="parouimpar" method="POST" action="">
+
+	<input type="text" name="numero1" id="numero1">
+
+	<input type="submit" value="ParOuImpar">
+
+</form>
+
+
+<?php
+
+	//operador de Comparação
+	$a = 55.0;
+	$b = 55;
+
+	var_dump($a > $b);
+	echo "<br>";
+	var_dump($a < $b);
+	echo "<br>";
+	var_dump($a == $b);
+	echo "<br>";
+	var_dump($a === $b);
+	echo "<br>";
+	var_dump($a != $b);
+	echo "<br>";
+	var_dump($a !== $b);
+	echo "<br>";
 ?>
 
