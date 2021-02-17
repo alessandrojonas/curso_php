@@ -389,8 +389,137 @@ if (isset($_POST["numero1"])){
 	echo "<p></p>";	
 
 
+	//Operador Ternario
+
+	$qualasuaidade = 30;
+	$idadeCrianca = 12;
+	$idadeMaior = 18;
+	$idadeMelhor = 65;
+
+	//if idade for menor de idade menor "Menor de idade " senao "Maior de Idade"
+	echo ($qualasuaidade < $idadeMaior ) ? "Menor de Idade " : "Maior de Idade";
+
+
+	//Laço de Repetição
+
+	for($i=0; $i <= $idade = 10; $i++){
+
+		echo $i."ola mundo<br>";
+	}
+
+	echo "<p></p>";	
 	
+	for($i=0; $i <= $idade = 10; $i += 5){
+
+		echo $i."ola mundo<br>";
+	}
+
+	echo "<p></p>";	
+
+	echo '<hr>';
+	
+	//Pulou a 10 linhas
+	for($i=0; $i <= $idade = 30; $i++){
+
+		if($i > 15 && $i < 25 ) continue;
+
+		echo $i."<br>";
+	}
+
+
+echo "<p></p>";	
+	echo "<select>";	
+	//2021 a 1980
+	for( $i = date("Y"); $i >= date("Y")-41 ; $i--){
+
+			echo '<option value="'.$i.'"> '.$i."</option>";
+	}
+	echo "</select>";
+
+echo "<p></p>";	
+
+	//FOREACH
+	$meses = array("Janeiro", "Fevereiro", "Março", "Abril","Maio", "Junho", "Julho", "Agosto", 
+					"Setembro","Outubro", "Novembro", "Dezembro");
+
+	foreach($meses as $mes){
+
+		echo "O mês é ".$mes.' | ';
+	}
+
+	echo '<p><hr></p>';
+
+
+
+	//FOREACH com index
+	foreach($meses as $index => $mes){
+
+		echo "<br>O mes é ".' '.$mes;
+
+		echo "<br> index  ".' '.$index;
+	}
+
+	
+?>
+
+
+
+<?php //FOREACH com $_GET ?>
+<form>
+	<input type="text" name="nome">
+	<input type="date" name="nascimento">
+	<input type="submit" value="ok">
+
+</form>
+
+<?php
+
+		foreach($_GET as $key => $value){
+
+			echo "Nome do campo: " . $key. '<br>';
+
+			echo "Valor do campo: " . $value. '<br>';
+
+			echo '<hr>';
+		} 
+		
+		
+
+//While
+$condicao = true;
+
+while ($condicao) {
+			
+			$numero = rand(1, 20);
+
+			if($numero == 3){
+
+				echo "Achei três Pare!!!";
+				$condicao = false;
+			}else{
+
+				echo $numero .' - ';
+			}
+
+		}		
+
+
+//Do while
+/*
+do {
+	echo "20";
+} while ($condicao) {
+			$numero = rand(1, 20);
+			if($numero == 3){
+				echo "Achei três Pare!!!";
+				$condicao = false;
+			}else{
+				echo $numero .' - ';
+			}
+		}
+*/
+
+
 
 
 ?>
-
