@@ -518,8 +518,71 @@ do {
 			}
 		}
 */
+echo '<p></p>';
+
+//Array //Vetor
+
+$frutas = array("maca","laranja","banana","limao"); //vetor
+foreach($frutas as $index => $value){
+
+	echo $value.'<br>';
+}
+
+print_r($frutas);
 
 
+echo '<p></p>';
+
+//Array
+$carros[0][0] = "GM";
+$carros[0][1] = "Cobalt";
+$carros[0][2] = "Onix";
+
+$carros[1][0] = "Ford";
+$carros[1][1] = "Fiesta";
+$carros[1][2] = "Fusion";
+
+
+echo $carros[0][2];
+
+echo '<br>'.end($carros[1]);
+
+echo '<p></p>';
+
+
+$pessoas = array();
+
+array_push($pessoas, array( 
+		'nome' => 'Alessandro',
+		'sobrenome' => 'Lourenco'
+));
+
+array_push($pessoas, array( 
+		'nome' => 'Danila',
+		'sobrenome' => 'Lourenco'
+));
+
+print_r($pessoas);
+echo '<br>';
+print_r($pessoas[0]);
+echo '<br>';
+print_r($pessoas[0]['nome']);
+echo '<br>';
+print_r($pessoas[0]['sobrenome']);
+echo '<br>';
+print_r($pessoas[1]['nome']);
+
+
+echo '<p></p>';
+
+//JASON
+echo json_encode($pessoas);  //transforma array em json
+
+echo '<p></p>';
+
+$jason = '[{"nome":"Alessandro","sobrenome":"Lourenco"},{"nome":"Danila","sobrenome":"Lourenco"}]';
+$data = json_decode($jason, true); //transforma json em array
+var_dump($data);
 
 
 ?>
