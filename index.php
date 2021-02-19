@@ -622,6 +622,8 @@ echo '<p></p>';
 
 //SESSÃO - SESSION
 #session_start(); //iniciar sessão
+//sessão salva um arquivo temporario na pasta do windows
+
 
 require_once("inc/config.php");
 
@@ -635,11 +637,19 @@ echo '<a href="session.php">Ir para Sessão</a>';
 
 var_dump($_SESSION);
 
+echo '<p></p>';
+
+echo session_save_path(); //pasta onde esta sendo salvo o arquivo temp
+
+echo '<p></p>';
+
+echo session_status();
 
 #session_unset($_SESSION["nome"]); //limpar sessão, mas continua a mesma
 #session_destroy(); //apaga a sessão
 
 
+//Funções - função do usuário
 
 
 
