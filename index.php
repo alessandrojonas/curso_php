@@ -531,6 +531,9 @@ foreach($frutas as $index => $value){
 print_r($frutas);
 
 
+//array_push($array, '$variavel') //adicionar item no Array
+
+
 echo '<p></p>';
 
 //Array
@@ -562,6 +565,8 @@ array_push($pessoas, array(
 		'sobrenome' => 'Lourenco'
 ));
 
+
+
 print_r($pessoas);
 echo '<br>';
 print_r($pessoas[0]);
@@ -583,6 +588,59 @@ echo '<p></p>';
 $jason = '[{"nome":"Alessandro","sobrenome":"Lourenco"},{"nome":"Danila","sobrenome":"Lourenco"}]';
 $data = json_decode($jason, true); //transforma json em array
 var_dump($data);
+
+
+//Constante
+define("SERVIDOR","127.0.0.1"); //constante em letra maiuscula
+
+echo SERVIDOR;
+
+
+//Array Constante
+define("BANCO_DE_DADOS",[
+	'127.0.0.1',
+	'root',
+	'password',
+	'teste'
+]); //caso adicione true, a constante fica não sensitive
+
+echo '<p></p>';
+
+echo BANCO_DE_DADOS[1];
+
+echo '<p></p>';
+
+print_r(BANCO_DE_DADOS);
+
+
+echo '<p></p>';
+
+echo PHP_VERSION; //Descobrir a versão do PHP
+
+echo '<p></p>';
+
+
+//SESSÃO - SESSION
+#session_start(); //iniciar sessão
+
+require_once("inc/config.php");
+
+$_SESSION["nome"] = "Alessandro";
+
+session_regenerate_id(); //gera um novo id sa sessão
+
+echo 'ID: '.session_id().'<br>'; //mostrar o id da sessão
+
+echo '<a href="session.php">Ir para Sessão</a>';
+
+var_dump($_SESSION);
+
+
+#session_unset($_SESSION["nome"]); //limpar sessão, mas continua a mesma
+#session_destroy(); //apaga a sessão
+
+
+
 
 
 ?>
