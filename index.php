@@ -1,7 +1,7 @@
 <?php
 
 	//curso de PHP 15/02/2021
-
+	echo '********* Require e Include **************<br>';
 	echo "<p><strong>Ola Enfermeira </strong></p>";
 	
 	//require obrigado o arquivo existe e funcionar corretamente
@@ -21,6 +21,7 @@
 	echo '<p>Resultado da Soma: '.$resultado.'</p>';
 	
 
+	echo '************** Switch CASE -**************<br>';
 	//Switch Case
 
 	$diadasemana = date("w");
@@ -85,6 +86,8 @@ var_dump($nome);
 
 // exit; esse comando interrompe o processo
 
+
+echo '<br>****************************** UNSET e ISSET **********************************<br>';
 //Limpar variavel 
 unset($nome);
 
@@ -98,6 +101,7 @@ if(isset($nome)){
 }
 
 
+echo '************************************* ARRAY **********************************<br>';
 //variavel array
 $fruta = array("abacaxi", "laranja", "manga", "abacate");
 
@@ -105,6 +109,8 @@ echo $fruta[0].'<br>';
 echo $fruta[1].'<br>';
 echo $fruta[3].'<br><br>';
 
+
+echo '************* Variavel tipo objeto ******************<br>';
 //variavel do tipo objeto
 $dataNascimento = new DateTime();
 
@@ -149,7 +155,7 @@ echo $local. ' '. $ip;
 
 
 
-
+echo '<br>***************************************** Variavel Global ***********************************<br>';
 //varivel global
 $var1 = "Alessandro Jonas";
 
@@ -183,7 +189,7 @@ usarVariavelGlobal();
 echo '<p>'.$var1.'</p>';
 
 
-
+echo '******************************************  Operadores de Atribuição ****************************<br>';
 //Operadores de Atribuição
 
 $var2 = "Hello";
@@ -287,7 +293,7 @@ if (isset($_POST["numero1"])){
 
 	$a = 35;
 	$b = 35;
-
+	echo '************************************** Validador Space Ship *********************************<br>';
 	var_dump($a <=> $b); //0
 	echo "<br>";
 
@@ -648,8 +654,83 @@ echo session_status();
 #session_unset($_SESSION["nome"]); //limpar sessão, mas continua a mesma
 #session_destroy(); //apaga a sessão
 
-
+echo '<p></p>';
 //Funções - função do usuário
+//parametro obrigatorio deve ser primeiro
+function texto($nome = "Alessandro"){
+
+	return 'Ola: '.$nome;
+}
+
+echo texto().'<br>';
+
+echo '<p></p>';
+
+echo texto("Jonas").'<br>';
+
+echo texto("").'<br>';
+
+echo '<p></p>';
+
+//passar varios Argumentos 
+//não sabe ao certo quanto argumento ira passar
+function ola(){
+
+	$parametros = func_get_args();
+
+	return $parametros;
+}
+
+$funcao = ola("Alessandro", "Jonas");
+echo $funcao[0].' - ';
+echo $funcao[1];
+
+//Passar parametro por referencia, troca o valor da variavel
+//& por referencia
+$a = 10;
+
+function trocaValor(&$b){
+
+	$b += 50; 
+	return $b;
+
+}
+echo '<p></p>';
+echo trocaValor($a);
+echo '<br>';
+echo trocaValor($a);
+echo '<br>';
+echo $a;
+
+echo '<p></p>';
+
+//declaração de tipos escalares
+function soma(float ...$valores):int{
+
+	return array_sum($valores);
+}
+
+echo soma(2, 2);
+echo '<br>';
+echo soma(3, 3.5);
+echo '<br>';
+echo soma(12, 36);
+echo '<br>';
+
+echo '<p></p>';
+//declaração de tipos escalares
+function soma2(float ...$valores): float{
+
+	return array_sum($valores);
+}
+
+
+echo '<br>';
+echo soma2(3, 3.5);
+echo '<p></p>';
+
+echo '********************************** Funcoes Recursivas *****************************<br>';
+//Funções Recursivas
 
 
 
