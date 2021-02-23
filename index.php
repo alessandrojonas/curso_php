@@ -731,7 +731,87 @@ echo '<p></p>';
 
 echo '********************************** Funcoes Recursivas *****************************<br>';
 //Funções Recursivas
+$hierarquia = array(
 
+	array(
+
+			'nome_cargo' => 'CEO',
+			'subordinado' => array(
+				//inicio: Diretor Comercial
+				array(
+					'nome_cargo' => 'Diretor Comercial',
+					//Inicio Gerente de Vendas
+					'subordinado' => array(
+						array(
+							'nome_cargo' => 'Gerente de Vendas'	
+						)
+						//Termino Gerente de Vendas
+					)
+				),
+				//Termino Comercial
+				array(
+					'nome_cargo' => 'Diretor Financeiro',
+					'subordinado' => array(
+						'nome_cargo' => 'Gerentes de Constas a pagar',
+						'subordinado' => array(
+							//inicio Supervisor
+								array(
+									'nome_cargo' => 'Supervisor de Pagamentos'
+								)
+							//Teermino Supervisor
+						)
+					)
+				)
+			)
+	)
+
+);
+
+
+echo '<br>***************** funcao Anonima ***************************<br>';
+function test($callback){
+
+	$callback();
+}
+
+test(function(){
+
+	echo "Terminou";
+});
+
+
+echo '<p></p>';
+
+//jogar a função na variavel
+$fn = function($a){
+
+	#var_dump($a);
+	echo $a;
+};
+
+
+$fn("ola Enfermeira");
+
+
+echo '<p></p>';
+
+
+echo '*********************** Date Time *********************************<br>';
+
+echo date("d/m/Y");  //Date pega o idioma do servidor (ingles|Portugues)
+
+echo '<p></p>';
+
+echo date("d/m/Y H:i:s");  //Date pega o idioma do servidor (ingles|Portugues)
+
+echo '<p></p>';
+
+echo time();  //timesstamp segundo de 1970
+
+echo '<p></p>';
+
+$ts = strtotime("2001-09-11"); //convert string em to time
+echo date("l, d/m/Y", $ts);
 
 
 ?>
