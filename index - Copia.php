@@ -886,51 +886,6 @@ echo $dt->format("d/m/Y H:i:s"); //acessando metodo
 echo '<p></p>';
 
 
-echo "********************************** Orientado a Objeto ****************************<br>";
-
-
-/*
-	Classe: Conjunto de atributos e Metodos
-	Objeto: Instancia para usar a Classe { Varaivel com as propriedades da Classe }
-	Objeto: Variavel representa a classe
-*/
-class Pessoa{
-
-	public $nome; //atributo
-
-	public function falar(){ //metodo
-	
-		return "O meu nome é ".$this->nome;
-	}
-	
-}
-
-$objNome = new Pessoa();
-$objNome->nome  = "Alessandro Jonas";
-echo $objNome -> falar();
-
-echo '<p></p>';
-
-
-
-
-
-
-
-class MostrarPropriedade{
-
-	public $nome;
-	public $idade;
-}
-
-$objMostraPropriedade = new MostrarPropriedade();
-$nome =  $objMostraPropriedade->nome = "Ale";
-$idade =  $objMostraPropriedade->idade = "40";
-
-echo "Meu nome ".$nome." Idade ".$idade.'<br>';
-
-
-
 
 
 
